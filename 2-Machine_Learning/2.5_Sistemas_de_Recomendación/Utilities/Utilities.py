@@ -6,7 +6,6 @@ import sys
 import string
 import nltk
 import re
-import unidecode
 
 ###################################################################### boxplots, histogramas, corrs
 def tokenizacion(text):
@@ -30,9 +29,9 @@ def removeStopwords(text):
         text: Texto del que se desea eliminar las palabras sin significado.
         
     """
-	text =[unidecode.unidecode(accented_string) for accented_string in text]
+	
 	stopw = nltk.corpus.stopwords.words('spanish')
-	stopw = stopw +["partido","partidos","futbol","balon","jugador","jugadores","liga","Liga","LaLiga","laliga","Laliga","estela","puesto","arriba","pierde","gana","abajo","diferencia","puestos","escalada","superar","doblete","club"]
+	stopw = stopw + ["juguete", "juguetes", "edad", "máxima", "recomendada", "incluye"]
 	x = [w.strip() for w in text if w not in stopw]
 	return x
 
